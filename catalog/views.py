@@ -10,8 +10,6 @@ def contacts(request):
         name = request.POST.get('name')
         phone = request.POST.get('phone')
         message = request.POST.get('message')
-        print(f"\nИмя - {name}\nТелефон - {phone}\nСообщение - {message}"
-
-        )
+        print(f"\nИмя - {name}\nТелефон - {phone}\nСообщение - {message}")
 
     return render(request, 'catalog/contacts.html')
