@@ -1,37 +1,33 @@
 from django.db import models
 
+NULLABLE = {"blank": True, "null": True}
+
 
 class Product(models.Model):
-    name = models.CharField(max_length=100, verbose_name='Наименование', help_text='Название продукта')
-    description = models.CharField(max_length=150, verbose_name='Описание', help_text='Информация о продукте')
-    image = models.ImageField(upload_to='catalog/photo', blank=True, null=True, verbose_name='Фото',
-                              help_text='Загрузите фото')
-    price = models.IntegerField(verbose_name='Цена', help_text='Цена за покупку')
-    data_make = models.DateField(blank=True, null=True, verbose_name='Дата создания', help_text='Дата записи в БД')
-    data_last_save = models.DateField(auto_now_add=True, auto_created=True, blank=True, null=True,
-                                      verbose_name='Дата посленего изменения',
-                                      help_text='Дата последнего изменения в БД')
-    category = models.ForeignKey('Category', on_delete=models.SET_NULL, verbose_name='Категория',
-                                 help_text='Выберите категорию',
-                                 null=True, blank=True, related_name='products', )
-
-    class Meta:
-        verbose_name = 'Продукт'
-        verbose_name_plural = 'Продукты'
-        ordering = ['name', 'category']
+    name = models.CharField(max_length=100, verbose_name="имя")
+    description = models.TextField(verbose_name="описание", help_text="Введите описание")
+    image = models.ImageField(upload_to="images/", verbose_name="изображение", **NULLABLE)
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, verbose_name="категория",
+                                 related_name="courses", **NULLABLE, )
+    price = models.IntegerField(verbose_name="цена покупки")
+    data_make = models.DateField(verbose_name="дата создания", **NULLABLE)
+    data_last_save = models.DateField(verbose_name="дата последнего изменеия", **NULLABLE)
 
     def __str__(self):
-        return f"{self.name} {self.description} {self.price}"
+        return f"{self.name}: {self.description}"
+
+    class Meta:
+        verbose_name = "Продукт"
+        verbose_name_plural = 'Продукты'
 
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Наименование', help_text='Название продукта')
-    description = models.CharField(max_length=150, verbose_name='Описание', help_text='Информация о продукте')
+    description = models.TextField(verbose_name="Описание", help_text="Введите описание")
+
+    def __str__(self):
+        return f"{self.name} {self.description}"
 
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
-        ordering = ['name']
-
-    def __str__(self):
-        return f"{self.name} {self.description}"
