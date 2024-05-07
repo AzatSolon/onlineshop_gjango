@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -51,11 +52,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'catalog',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': str(os.path.join(BASE_DIR, "sql")),
         'USER': 'postgres',
-        'PASSWORD': 'Azat22111',
-        'HOST': '127.0.0.2',
+        'PASSWORD': '1111',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
@@ -85,6 +86,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = (BASE_DIR / 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/media/"
