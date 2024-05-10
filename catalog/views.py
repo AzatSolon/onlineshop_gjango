@@ -1,8 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-
-def home_page(request):
-    return render(request, 'home_page.html')
+from catalog.models import Product
 
 
 def contacts(request):
@@ -17,3 +15,15 @@ def contacts(request):
 
 def index(request):
     return render(request, 'base.html')
+
+
+def products_list(request):
+    products = Product.objects.all()
+    context = {"products": products}
+    return render(request, 'product_list.html', context)
+
+
+def product_info(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    context = {"product": product}
+    return render(request, 'product_info.html', context)
