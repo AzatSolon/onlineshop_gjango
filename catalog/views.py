@@ -13,3 +13,7 @@ def contacts(request):
         print(f"\nИмя - {name}\nТелефон - {phone}\nСообщение - {message}")
 
     return render(request, 'contacts.html')
+
+
+def index(request):
+    return render(request, 'base.html')
