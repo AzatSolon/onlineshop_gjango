@@ -1,0 +1,198 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-05-07T13:41:16.760Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Посуда: Кухонный инвентарь.",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-05-07T13:42:03.202Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Чашка: емкость для воды",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-05-07T13:42:26.456Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "мебель: мягкая мебель",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-05-07T13:42:48.653Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "стол: обеденный стол",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$A8XF93yE00dY1Y9m8dlKCd$2vZyLU8K84f4FistMgJ20dR6HWrubvomxQFcOwVbv2Q=",
+    "last_login": "2024-05-07T13:16:54.877Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "asolo4150@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-07T13:16:18.987Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "4w77vje0x0xh28l9v8zi3tjvpj0e6ns7",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAoA6Uu3XuGZmYYbNVAUtqV8e7apAvd_vfef6kRt3UatybLOCd1VladfjdCfkjZQbpjuVXNtazLTHpX9EGbvtYkz8vh_h1M2KZvHfsk2Q3GiTcwWIhdBMpgMwIi-Y6I2YP1zOgM9wYkDxJ6Jh9DCDaq9wfhNzfT:1s4Kgg:EekCaKz6qTur57TclFhGfM165FC5hazjzBczV5hlPzU",
+    "expire_date": "2024-05-21T13:16:54.879Z"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 6,
+  "fields": {
+    "name": "Инструменты",
+    "description": "Рабочий инвентарь"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 7,
+  "fields": {
+    "name": "Посуда",
+    "description": "Кухонная утварь"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 8,
+  "fields": {
+    "name": "Мебель",
+    "description": ""
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 9,
+  "fields": {
+    "name": "Мебель",
+    "description": ""
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 10,
+  "fields": {
+    "name": "Электроника",
+    "description": ""
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Чашка",
+    "description": "",
+    "image": "",
+    "category": 7,
+    "price": 50,
+    "data_make": null,
+    "data_last_save": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 9,
+  "fields": {
+    "name": "Тарелка",
+    "description": "",
+    "image": "",
+    "category": 7,
+    "price": 30,
+    "data_make": null,
+    "data_last_save": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "name": "Пила",
+    "description": "",
+    "image": "",
+    "category": 6,
+    "price": 330,
+    "data_make": null,
+    "data_last_save": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "name": "Отвертка",
+    "description": "Отвертка с насадками",
+    "image": "",
+    "category": 6,
+    "price": 1000,
+    "data_make": null,
+    "data_last_save": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "name": "Шкаф",
+    "description": "Шкаф 4х2",
+    "image": "",
+    "category": 9,
+    "price": 120000,
+    "data_make": null,
+    "data_last_save": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "name": "Ipopsx15",
+    "description": "смартфон",
+    "image": "",
+    "category": 10,
+    "price": 120000,
+    "data_make": null,
+    "data_last_save": null
+  }
+}
+]
