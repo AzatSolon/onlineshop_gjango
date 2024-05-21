@@ -7,13 +7,13 @@ class Command(BaseCommand):
 
     @staticmethod
     def json_read_categories():
-        with open('category.json', encoding="UTF-8") as file:
+        with open('category.json') as file:
             data = json.load(file)
             return data
 
     @staticmethod
     def json_read_products():
-        with open('product.json', encoding="UTF-8") as file:
+        with open('product.json') as file:
             data = json.load(file)
             return data
 

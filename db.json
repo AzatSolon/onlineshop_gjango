@@ -1,171 +1,580 @@
 [
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2024-05-07T13:41:16.760Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "1",
-    "object_repr": "Посуда: Кухонный инвентарь.",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-05-07T13:41:16.760Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "РџРѕСЃСѓРґР°: РљСѓС…РѕРЅРЅС‹Р№ РёРЅРІРµРЅС‚Р°СЂСЊ.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-05-07T13:42:03.202Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Р§Р°С€РєР°: РµРјРєРѕСЃС‚СЊ РґР»СЏ РІРѕРґС‹",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-05-07T13:42:26.456Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "РјРµР±РµР»СЊ: РјСЏРіРєР°СЏ РјРµР±РµР»СЊ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-05-07T13:42:48.653Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "СЃС‚РѕР»: РѕР±РµРґРµРЅРЅС‹Р№ СЃС‚РѕР»",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-05-10T09:55:31.591Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "14",
+      "object_repr": "Р»РѕР¶РєР°: СЃС‚РѕР»РѕРІС‹Р№ РїСЂРёР±РѕСЂ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-05-10T15:36:13.550Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "РњРµР±РµР»СЊ: ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-05-11T06:07:51.713Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "РўСЂР°РЅСЃРїРѕСЂС‚: РўРµС…РЅРёС‡РµСЃРєРёРµ СЃСЂРµРґСЃС‚РІР° РґР»СЏ РїРµСЂРµРґРІРёР¶РµРЅРёСЏ.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-05-11T06:08:03.275Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "15",
+      "object_repr": "РЎР°РјРѕРєР°С‚: РЎСЂРµРґСЃС‚РІРѕ РїРµСЂРµРґРІРёР¶РµРЅРёСЏ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add РљР°С‚РµРіРѕСЂРёСЏ",
+      "content_type": 7,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change РљР°С‚РµРіРѕСЂРёСЏ",
+      "content_type": 7,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete РљР°С‚РµРіРѕСЂРёСЏ",
+      "content_type": 7,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view РљР°С‚РµРіРѕСЂРёСЏ",
+      "content_type": 7,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add РџСЂРѕРґСѓРєС‚",
+      "content_type": 8,
+      "codename": "add_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change РџСЂРѕРґСѓРєС‚",
+      "content_type": 8,
+      "codename": "change_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete РџСЂРѕРґСѓРєС‚",
+      "content_type": 8,
+      "codename": "delete_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view РџСЂРѕРґСѓРєС‚",
+      "content_type": 8,
+      "codename": "view_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add Р±Р»РѕРі",
+      "content_type": 9,
+      "codename": "add_blog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change Р±Р»РѕРі",
+      "content_type": 9,
+      "codename": "change_blog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete Р±Р»РѕРі",
+      "content_type": 9,
+      "codename": "delete_blog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view Р±Р»РѕРі",
+      "content_type": 9,
+      "codename": "view_blog"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$A8XF93yE00dY1Y9m8dlKCd$2vZyLU8K84f4FistMgJ20dR6HWrubvomxQFcOwVbv2Q=",
+      "last_login": "2024-05-07T13:16:54.877Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "asolo4150@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-05-07T13:16:18.987Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "catalog",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "catalog",
+      "model": "product"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "blog",
+      "model": "blog"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "4w77vje0x0xh28l9v8zi3tjvpj0e6ns7",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hAoA6Uu3XuGZmYYbNVAUtqV8e7apAvd_vfef6kRt3UatybLOCd1VladfjdCfkjZQbpjuVXNtazLTHpX9EGbvtYkz8vh_h1M2KZvHfsk2Q3GiTcwWIhdBMpgMwIi-Y6I2YP1zOgM9wYkDxJ6Jh9DCDaq9wfhNzfT:1s4Kgg:EekCaKz6qTur57TclFhGfM165FC5hazjzBczV5hlPzU",
+      "expire_date": "2024-05-21T13:16:54.879Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "РРЅСЃС‚СЂСѓРјРµРЅС‚С‹",
+      "description": "Р Р°Р±РѕС‡РёР№ РёРЅРІРµРЅС‚Р°СЂСЊ"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "name": "РџРѕСЃСѓРґР°",
+      "description": "РљСѓС…РѕРЅРЅР°СЏ СѓС‚РІР°СЂСЊ"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "name": "РњРµР±РµР»СЊ",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 10,
+    "fields": {
+      "name": "Р­Р»РµРєС‚СЂРѕРЅРёРєР°",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 11,
+    "fields": {
+      "name": "РўСЂР°РЅСЃРїРѕСЂС‚",
+      "description": "РўРµС…РЅРёС‡РµСЃРєРёРµ СЃСЂРµРґСЃС‚РІР° РґР»СЏ РїРµСЂРµРґРІРёР¶РµРЅРёСЏ."
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "test",
+      "slug": "test",
+      "content": "test test test etst ets tsdfysdhxjfg",
+      "image": "blog/image/1696502290_gas-kvas-com-p-kartinki-lyubie-48.jpg",
+      "views_count": 23,
+      "is_published": true
+    }
   }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2024-05-07T13:42:03.202Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "1",
-    "object_repr": "Чашка: емкость для воды",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2024-05-07T13:42:26.456Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "2",
-    "object_repr": "мебель: мягкая мебель",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 4,
-  "fields": {
-    "action_time": "2024-05-07T13:42:48.653Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "2",
-    "object_repr": "стол: обеденный стол",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2024-05-10T09:55:31.591Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "14",
-    "object_repr": "ложка: столовый прибор",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2024-05-10T15:36:13.550Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "9",
-    "object_repr": "Мебель: ",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2024-05-11T06:07:51.713Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "11",
-    "object_repr": "Транспорт: Технические средства для передвижения.",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2024-05-11T06:08:03.275Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "15",
-    "object_repr": "Самокат: Средство передвижения",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$720000$A8XF93yE00dY1Y9m8dlKCd$2vZyLU8K84f4FistMgJ20dR6HWrubvomxQFcOwVbv2Q=",
-    "last_login": "2024-05-07T13:16:54.877Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "asolo4150@gmail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2024-05-07T13:16:18.987Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "4w77vje0x0xh28l9v8zi3tjvpj0e6ns7",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2hAoA6Uu3XuGZmYYbNVAUtqV8e7apAvd_vfef6kRt3UatybLOCd1VladfjdCfkjZQbpjuVXNtazLTHpX9EGbvtYkz8vh_h1M2KZvHfsk2Q3GiTcwWIhdBMpgMwIi-Y6I2YP1zOgM9wYkDxJ6Jh9DCDaq9wfhNzfT:1s4Kgg:EekCaKz6qTur57TclFhGfM165FC5hazjzBczV5hlPzU",
-    "expire_date": "2024-05-21T13:16:54.879Z"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 6,
-  "fields": {
-    "name": "Инструменты",
-    "description": "Рабочий инвентарь"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 7,
-  "fields": {
-    "name": "Посуда",
-    "description": "Кухонная утварь"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 8,
-  "fields": {
-    "name": "Мебель",
-    "description": ""
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 10,
-  "fields": {
-    "name": "Электроника",
-    "description": ""
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 11,
-  "fields": {
-    "name": "Транспорт",
-    "description": "Технические средства для передвижения."
-  }
-}
+]
