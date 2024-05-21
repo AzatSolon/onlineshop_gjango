@@ -1,0 +1,20 @@
+{% extends 'catalog/product_list.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="row text-center">
+    <div class="col-4">
+        <div class="card mb-4 box-shadow">
+            <img src="{{ product.image | media_filter }}">
+            <div class="card-header">
+                <h1 class="my-0 font-weight-normal">{{ object.name }}</h1>
+            </div>
+            <div class="card-body">
+                <h3 class="card-text">Описание:{{object.description}}</h3>
+                <h3 class="card-text">Категория:{{object.category}}</h3>
+                <h2 class="card-text">Цена:{{object.price}}</h2>
+                <a href="/" class="btn btn-primary">Назад</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
