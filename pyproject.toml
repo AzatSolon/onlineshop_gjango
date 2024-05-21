@@ -13,6 +13,9 @@ ipython = "^8.24.0"
 black = "^24.4.2"
 psycopg2-binary = "^2.9.9"
 psycopg2 = "^2.9.9"
+python-slugify = "^8.0.4"
+slugify = "^0.0.1"
+pytils = "^0.4.1"
 
 
 [build-system]
