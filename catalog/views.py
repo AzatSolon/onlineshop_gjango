@@ -26,14 +26,26 @@ class ContactsTemplateView(TemplateView):
 class ProductListView(ListView):
     model = Product
 
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.viewed += 1
+        self.object.save()
+        return self.object
+
 
 class ProductDetailView(DetailView):
     model = Product
 
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.views_counter += 1
+        self.object.save()
+        return self.object
+
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ['name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save']
+    fields = ['name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save',]
     success_url = reverse_lazy('catalog:product_list ')
 
     def form_valid(self, form):
@@ -47,3 +59,4 @@ class ProductCreateView(CreateView):
 
 class ProductDeleteView(DeleteView):
     model = Product
+    success_url = reverse_lazy('catalog:products')
