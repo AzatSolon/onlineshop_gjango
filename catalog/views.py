@@ -1,10 +1,11 @@
+import csv
+
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, TemplateView
 from pytils.translit import slugify
 
 from catalog.models import Product
-import csv
 
 
 class ContactsTemplateView(TemplateView):
@@ -28,7 +29,7 @@ class ProductListView(ListView):
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
-        self.object.viewed += 1
+        self.object.views_counter += 1
         self.object.save()
         return self.object
 
@@ -45,7 +46,7 @@ class ProductDetailView(DetailView):
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ['name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save',]
+    fields = ['name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save', 'views_count']
     success_url = reverse_lazy('catalog:product_list ')
 
     def form_valid(self, form):
@@ -59,4 +60,4 @@ class ProductCreateView(CreateView):
 
 class ProductDeleteView(DeleteView):
     model = Product
-    success_url = reverse_lazy('catalog:products')
+    success_url = reverse_lazy('catalog:product_list')
