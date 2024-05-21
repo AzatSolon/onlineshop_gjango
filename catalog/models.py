@@ -23,12 +23,17 @@ class Product(models.Model):
                                  related_name="products", **NULLABLE, )
     price = models.IntegerField(verbose_name="цена покупки")
     data_make = models.DateField(verbose_name="дата создания", **NULLABLE)
+    views_count = models.PositiveIntegerField(verbose_name='Просмотры', default=0)
     data_last_save = models.DateField(verbose_name="дата последнего изменеия", **NULLABLE)
-
 
     def __str__(self):
         return f"{self.name}: {self.description}"
 
     class Meta:
         verbose_name = "Продукт"
-        verbose_name_plural = 'Продукты'
+        verbose_name_plural = "Продукты"
+        ordering = [
+            "category", "name", "price",
+            "data_make", "data_last_save"
+        ]
+
