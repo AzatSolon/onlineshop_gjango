@@ -26,7 +26,7 @@ class ProductDetailView(DetailView):
 class ProductCreateView(CreateView):
     model = Product
     fields = ('name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save')
-    success_url = reverse_lazy('catalog:base')
+    success_url = reverse_lazy('catalog:product_list ')
 
 
 class ProductDeleteView(DeleteView):
