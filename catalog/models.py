@@ -25,6 +25,7 @@ class Product(models.Model):
     data_make = models.DateField(verbose_name="дата создания", **NULLABLE)
     data_last_save = models.DateField(verbose_name="дата последнего изменеия", **NULLABLE)
 
+
     def __str__(self):
         return f"{self.name}: {self.description}"
 
