@@ -1,1 +1,1 @@
-# onlineshop_gjango
+# onlineshop_django
