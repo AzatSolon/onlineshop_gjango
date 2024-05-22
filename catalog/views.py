@@ -61,4 +61,4 @@ class ProductCreateView(CreateView):
 
 class ProductDeleteView(DeleteView):
     model = Product
-    success_url = reverse_lazy('catalog:product_delete')
+    success_url = reverse_lazy('catalog:products_list')
