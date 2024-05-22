@@ -46,8 +46,9 @@ class ProductDetailView(DetailView):
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ('name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save', 'views_count')
-    success_url = reverse_lazy('catalog:product_list ')
+    fields = ['name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save', 'views_counter',
+              'is_published']
+    success_url = reverse_lazy('catalog:products_list')
 
     def form_valid(self, form):
         if form.is_valid():
@@ -60,4 +61,4 @@ class ProductCreateView(CreateView):
 
 class ProductDeleteView(DeleteView):
     model = Product
-    success_url = reverse_lazy('catalog:product_list')
+    success_url = reverse_lazy('catalog:product_delete')
