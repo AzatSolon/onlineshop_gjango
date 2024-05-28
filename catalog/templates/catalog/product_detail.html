@@ -13,13 +13,17 @@
                         <h5 class="card-title">{{ product.name }} ({{ product.slug }})</h5>
                         <p class="card-text">{{product.name}}</p>
                         <p class="card-text"><strong>Категория:</strong> {{ product.category }}</p>
-                        <p class="card-text"><strong>Описание:</strong> {{ product.description | truncatechars:100 }}</p>
+                        <p class="card-text"><strong>Описание:</strong> {{ product.description | truncatechars:100 }}
+                        </p>
                         <p class="card-text"><strong>Цена:</strong> {{ product.price }}</p>
                         <div class="btn-group">
-                                    <a class="btn btn-light" href="{% url 'catalog:products_list' %}" role="button">Назад</a>
-                                    <a class="btn btn-danger" href="{% url 'catalog:product_delete' product.pk %}" role="button">Удалить</a>
-                                </div>
+                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}"
+                               role="button">Изменить</a>
+                            <a class="btn btn-danger" href="{% url 'catalog:product_delete' product.pk %}"
+                               role="button">Удалить</a>
+                        </div>
                     </div>
+                        <a class="btn btn-light" href="{% url 'catalog:products_list' %}" role="button">Назад</a>
                     <div class="card-footer">
                         <small class="text-muted">Просмотры: {{ product.views_counter }}</small>
                     </div>
