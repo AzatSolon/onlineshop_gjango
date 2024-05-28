@@ -1,11 +1,12 @@
 import csv
 
 from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, TemplateView
+from django.urls import reverse_lazy, reverse
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, TemplateView, UpdateView
 from pytils.translit import slugify
 
 from catalog.models import Product
+from catalog.forms import ProductForm
 
 
 class ContactsTemplateView(TemplateView):
@@ -46,8 +47,7 @@ class ProductDetailView(DetailView):
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ['name', 'description', 'image', 'category', 'price', 'data_make', 'data_last_save', 'views_counter',
-              'is_published']
+    form_class = ProductForm
     success_url = reverse_lazy('catalog:products_list')
 
     def form_valid(self, form):
@@ -62,3 +62,12 @@ class ProductCreateView(CreateView):
 class ProductDeleteView(DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:products_list')
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:products_list')
+
+    def get_success_url(self):
+        return reverse('catalog:product_detail', args=[self.kwargs.get('pk')])
