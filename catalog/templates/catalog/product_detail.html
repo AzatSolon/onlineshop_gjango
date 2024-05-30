@@ -16,6 +16,11 @@
                         <p class="card-text"><strong>Описание:</strong> {{ product.description | truncatechars:100 }}
                         </p>
                         <p class="card-text"><strong>Цена:</strong> {{ product.price }}</p>
+                        {% if active_version %}
+                        <p>Активная версия: {{ active_version.version }}</p>
+                        {% else %}
+                        <p>Активная версия: отсутствует</p>
+                        {% endif %}
                         <div class="btn-group">
                             <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}"
                                role="button">Изменить</a>
@@ -23,7 +28,7 @@
                                role="button">Удалить</a>
                         </div>
                     </div>
-                        <a class="btn btn-light" href="{% url 'catalog:products_list' %}" role="button">Назад</a>
+                    <a class="btn btn-light" href="{% url 'catalog:products_list' %}" role="button">Назад</a>
                     <div class="card-footer">
                         <small class="text-muted">Просмотры: {{ product.views_counter }}</small>
                     </div>
