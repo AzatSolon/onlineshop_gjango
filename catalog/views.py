@@ -45,6 +45,13 @@ class ProductDetailView(DetailView):
         self.object.save()
         return self.object
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        product = self.get_object()
+        active_version = Version.objects.filter(name_product=product, version_mark=True).first()
+        context['active_version'] = active_version
+        return context
+
 
 class ProductCreateView(CreateView):
     model = Product
