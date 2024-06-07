@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 
-from users.forms import UserProfileForm
+from users.forms import UserProfileForm, UserPassRecoveryForm
 from users.models import User
 
 
@@ -20,3 +20,10 @@ class ProfileView(UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+
+class PassRecovery(UpdateView):
+    models = User
+    form_class = UserPassRecoveryForm
+    template_name = 'users/pass_recovery.html'
+    success_url = reverse_lazy('users:login')
