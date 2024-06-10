@@ -1,5 +1,7 @@
 from django.db import models
 
+from users.models import User
+
 NULLABLE = {"blank": True, "null": True}
 
 
@@ -25,6 +27,7 @@ class Product(models.Model):
     data_make = models.DateField(verbose_name="дата создания", **NULLABLE)
     views_counter = models.PositiveIntegerField(verbose_name='Просмотры', default=0)
     data_last_save = models.DateField(verbose_name="дата последнего изменеия", **NULLABLE)
+    owner = models.ForeignKey(User, verbose_name="Владелец", null=True, blank=True, on_delete=models.SET_NULL)
     is_published = models.BooleanField(default=False, verbose_name='публикация')
 
     def __str__(self):
@@ -37,6 +40,20 @@ class Product(models.Model):
             "category", "name", "price",
             "data_make", "data_last_save", 'views_counter',
             'is_published',
+        ]
+        permissions = [
+            (
+                'set_published',
+                'Can publish posts'
+            ),
+            (
+                'change_description',
+                'Can change description'
+            ),
+            (
+                'change_category',
+                'Can change category'
+            )
         ]
 
 

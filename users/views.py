@@ -1,5 +1,6 @@
 import secrets
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy, reverse
@@ -29,7 +30,7 @@ class RegisterView(CreateView):
         return super().form_valid(form)
 
 
-class ProfileView(UpdateView):
+class ProfileView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserProfileForm
     success_url = reverse_lazy('users:profile')
@@ -38,7 +39,7 @@ class ProfileView(UpdateView):
         return self.request.user
 
 
-class PassRecovery(UpdateView):
+class PassRecovery(LoginRequiredMixin, UpdateView):
     models = User
     form_class = UserPassRecoveryForm
     template_name = 'users/pass_recovery.html'
