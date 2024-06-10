@@ -1,12 +1,14 @@
 import csv
 
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, TemplateView, UpdateView
 from pytils.translit import slugify
 
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, ModeratorForm
 from catalog.models import Product, Version
 
 
@@ -36,7 +38,7 @@ class ProductListView(ListView):
         return self.object
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(DetailView, PermissionRequiredMixin, LoginRequiredMixin):
     model = Product
 
     def get_object(self, queryset=None):
@@ -53,7 +55,7 @@ class ProductDetailView(DetailView):
         return context
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(CreateView, LoginRequiredMixin):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:products_list')
@@ -62,6 +64,14 @@ class ProductCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Добавить продукт'
         return context
+
+    def form_valid(self, form):
+        product = form.save()
+        user = self.request.user
+        product.owner = user
+        product.save()
+
+        return super().form_valid(form)
 
     def form_valid(self, form):
         if form.is_valid():
@@ -116,10 +126,11 @@ class VersionDeleteView(DeleteView):
         return context
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(UpdateView, LoginRequiredMixin):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:products_list')
+    permission_required = 'users.change_product'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -132,7 +143,12 @@ class ProductUpdateView(UpdateView):
         return context
 
     def get_form_class(self):
-        return ProductForm
+        user = self.request.user
+        if user == self.object.owner:
+            return ProductForm
+        if user.has_perm('catalog.set_published') and user.has_perm('catalog.change_description') and user.has_perm('catalog.change_category'):
+            return ModeratorForm
+        raise PermissionDenied
 
     def get_success_url(self):
         return reverse('catalog:product_detail', args=[self.kwargs.get('pk')])
