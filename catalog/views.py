@@ -54,6 +54,14 @@ class ProductDetailView(DetailView, PermissionRequiredMixin, LoginRequiredMixin)
         context['active_version'] = active_version
         return context
 
+    def form_valid(self, form):
+        product = form.save()
+        user = self.request.user
+        product.owner = user
+        product.save()
+
+        return super().form_valid(form)
+
 
 class ProductCreateView(CreateView, LoginRequiredMixin):
     model = Product
@@ -118,7 +126,7 @@ class VersionDeleteView(DeleteView):
         return context
 
 
-class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class ProductUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:products_list')

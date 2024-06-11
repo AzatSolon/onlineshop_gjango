@@ -43,7 +43,7 @@ class Product(models.Model):
         ]
         permissions = [
             (
-                'is_published',
+                'set_published',
                 'Can publish posts'
             ),
             (
