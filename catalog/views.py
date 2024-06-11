@@ -1,6 +1,6 @@
 import csv
 
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
@@ -66,14 +66,6 @@ class ProductCreateView(CreateView, LoginRequiredMixin):
         return context
 
     def form_valid(self, form):
-        product = form.save()
-        user = self.request.user
-        product.owner = user
-        product.save()
-
-        return super().form_valid(form)
-
-    def form_valid(self, form):
         if form.is_valid():
             new_mat = form.save()
             new_mat.slug = slugify(new_mat.name)
@@ -126,7 +118,7 @@ class VersionDeleteView(DeleteView):
         return context
 
 
-class ProductUpdateView(UpdateView, LoginRequiredMixin):
+class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:products_list')
@@ -146,8 +138,16 @@ class ProductUpdateView(UpdateView, LoginRequiredMixin):
         user = self.request.user
         if user == self.object.owner:
             return ProductForm
-        if user.has_perm('catalog.set_published') and user.has_perm('catalog.change_description') and user.has_perm('catalog.change_category'):
+
+        required_perms = [
+            'catalog.can_edit_description',
+            'catalog.can_edit_category',
+            'catalog.can_canceled_publication'
+        ]
+
+        if user.has_perm(required_perms):
             return ModeratorForm
+
         raise PermissionDenied
 
     def get_success_url(self):
