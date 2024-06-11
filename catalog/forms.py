@@ -48,4 +48,9 @@ class VersionForm(StyleMixin, ModelForm):
 class ModeratorForm(StyleMixin, forms, ModelForm):
     class Meta:
         model = Product
-        fields = ('description', 'category', 'is_published')
+        fields = ('category', 'description', 'is_published')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
