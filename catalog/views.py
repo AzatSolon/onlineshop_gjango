@@ -9,7 +9,8 @@ from django.views.generic import ListView, DetailView, CreateView, DeleteView, T
 from pytils.translit import slugify
 
 from catalog.forms import ProductForm, VersionForm, ModeratorForm
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
+from catalog.services import get_cached_categories
 
 
 class ContactsTemplateView(TemplateView):
@@ -171,3 +172,11 @@ class ProductUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
             return super().form_valid(form)
         else:
             return self.render_to_response(self.get_context_data(form=form, formset=formset))
+
+
+class CategoryListView(ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_cached_categories()
+
